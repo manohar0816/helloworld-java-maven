@@ -36,4 +36,8 @@ node {
       junit '**/target/surefire-reports/TEST-*.xml'
       archive 'target/*.jar'
    }
+   stage('Install') {
+   sh "'${mvnHome}\bin\mvn' -Dmaven.test.failure.ignore clean install"
+   }
 }
+
